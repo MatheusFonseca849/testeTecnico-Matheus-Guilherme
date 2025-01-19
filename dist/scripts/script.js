@@ -6,17 +6,24 @@ const exercise2 = () => {
     const form = document.createElement("form");
     form.className = "outputForm";
     const label = document.createElement("label");
-    label.innerHTML = "Insira um número para verificar se ele está na sequência Fibonacci:";
+    label.innerHTML =
+        "Insira um número para verificar se ele está na sequência Fibonacci:";
     const input = document.createElement("input");
     input.type = "number";
     input.min = "0";
-    input.value = "0";
+    input.placeholder = "Digite um número";
+    input.required = true;
     input.addEventListener("input", (e) => {
         const target = e.target;
         const value = Number(target.value);
-        if (value < 0) {
-            target.value = "0";
+        if (value < 0 ||
+            value === undefined ||
+            value === null ||
+            value.toString() === "" ||
+            value.toString().length === 0 ||
+            Number.isNaN(value)) {
             alert("Insira um número positivo");
+            target.value = "0";
         }
     });
     const btn = document.createElement("button");
@@ -24,12 +31,15 @@ const exercise2 = () => {
     const result = document.createElement("p");
     btn.addEventListener("click", (e) => {
         e.preventDefault();
+        if (!input.value || input.value.trim() === "") {
+            alert("Insira um número positivo");
+            return;
+        }
         const userInput = Number(input.value);
         const answer = exercicio2(userInput);
-        result.innerHTML = answer ?
-            `O número ${userInput} pertence a sequência Fibonacci`
-            :
-                `O número ${userInput} não pertence a sequência Fibonacci`;
+        result.innerHTML = answer
+            ? `O número ${userInput} pertence a sequência Fibonacci`
+            : `O número ${userInput} não pertence a sequência Fibonacci`;
     });
     label.append(input);
     form.append(label, btn);
@@ -96,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn2: document.getElementById("btn_2"),
         btn3: document.getElementById("btn_3"),
         btn4: document.getElementById("btn_4"),
-        btn5: document.getElementById("btn_5")
+        btn5: document.getElementById("btn_5"),
     };
     if (buttons.btn2) {
         buttons.btn2.addEventListener("click", () => exercise2());

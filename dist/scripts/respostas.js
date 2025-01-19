@@ -1,7 +1,11 @@
 import dados from "../database/dados.js";
 export const exercicio2 = (input) => {
-    // Verifica se o input é um número positivo ou NaN
-    if (input < 0 || Number.isNaN(input)) {
+    // Verifica se o input é um número positivo, vazio ou NaN
+    if (input < 0 ||
+        Number.isNaN(input) ||
+        input === undefined ||
+        input === null ||
+        input.toString() === "") {
         alert("Insira um número positivo");
         // Retorna falso se o input for inválido
         return false;
@@ -9,10 +13,13 @@ export const exercicio2 = (input) => {
     // Inicializa o array com os dois primeiros dígitos da sequência de Fibonacci
     const fibonacciArray = [0, 1];
     // Inicializa um contador para percorrer o array
-    let counter = fibonacciArray[fibonacciArray.length - 1] + fibonacciArray[fibonacciArray.length - 2];
+    let counter = fibonacciArray[fibonacciArray.length - 1] +
+        fibonacciArray[fibonacciArray.length - 2];
     // Enquanto o contador for menor ou igual ao input, adiciona os dígitos ao array
     while (counter <= input) {
-        counter = fibonacciArray[fibonacciArray.length - 1] + fibonacciArray[fibonacciArray.length - 2];
+        counter =
+            fibonacciArray[fibonacciArray.length - 1] +
+                fibonacciArray[fibonacciArray.length - 2];
         fibonacciArray.push(counter);
     }
     // Verifica se o número está na sequência de Fibonacci
@@ -55,31 +62,31 @@ export const exercicio3 = () => {
     return [
         Number(smallestValue.toFixed(2)),
         Number(greaterValue.toFixed(2)),
-        aboveAvg
+        aboveAvg,
     ];
 };
 export const exercicio4 = () => {
     const stateInvoiceArray = [
         {
             state: "SP",
-            invoice: 67836.43
+            invoice: 67836.43,
         },
         {
             state: "RJ",
-            invoice: 36678.66
+            invoice: 36678.66,
         },
         {
             state: "MG",
-            invoice: 29229.88
+            invoice: 29229.88,
         },
         {
             state: "ES",
-            invoice: 27165.48
+            invoice: 27165.48,
         },
         {
             state: "Outros",
-            invoice: 19848.53
-        }
+            invoice: 19848.53,
+        },
     ];
     const total = stateInvoiceArray.reduce((a, b) => a + b.invoice, 0);
     return stateInvoiceArray.map((state) => (Object.assign(Object.assign({}, state), { percentage: ((state.invoice * 100) / total).toFixed(2) })));
