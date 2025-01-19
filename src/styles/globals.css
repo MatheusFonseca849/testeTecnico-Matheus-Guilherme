@@ -1,0 +1,49 @@
+:root{
+
+--color-primary:#7E0C11;
+--color-primary-hover:#a00f15;
+--color-primary-active:#c41b27;
+
+--color-grey-900: #202124;
+--color-grey-800: #282c30;
+--color-grey-700: #3c4043;
+--color-grey-600: #5f6368;
+--color-grey-500: #73777a;
+--color-grey-400: #dfe1e5;
+--color-grey-300: #e8eaed;
+--color-grey-200: #f1f3f4;
+--color-grey-100: #f8f9fa;
+
+--color-fixed-black: #202124;
+--color-fixed-white: #f8f9fa;
+
+--font-size-0: 0.75rem; /* 12px */
+--font-size-1: .875rem; /* 14px */
+--font-size-2: 1rem; /* 16px */
+--font-size-3: 1.125rem; /* 18px */
+--font-size-4: 1.25rem; /* 20px */
+--font-size-5: 1.5rem; /* 24px */
+
+--font-weight-0: 400;
+--font-weight-1: 500;
+--font-weight-2: 600;
+--font-weight-3: 700;
+
+--padding-0: 0.25rem; /* 4px */
+--padding-1: 0.5rem; /* 8px */
+--padding-2: 0.75rem; /* 12px */
+--padding-3: 1rem; /* 16px */
+--padding-4: 1.25rem; /* 20px */
+--padding-5: 1.5rem; /* 24px */
+--padding-6: 1.75rem; /* 28px */
+--padding-7: 2rem; /* 32px */
+
+--radius-button: 54px;
+--radius-input: 54px;
+--radius-section: 4px;
+--radius-output: 4px;
+
+--gap-default: 16px;
+--gap-medium: 24px;
+
+}
